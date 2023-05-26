@@ -1,23 +1,31 @@
 ﻿using Agenda.Compartilhado;
 
-
 namespace Agenda.ModuloTarefa {
     internal class ControladorTarefa : ControladorBase {
 
         private RepositorioTarefa repositorioTarefa;
-        private ListagemTarefaControl listagemTarefa;
+        private TabelaTarefaControl tabelaTarefas;
 
         public ControladorTarefa(RepositorioTarefa repositorioTarefa) {
 
             this.repositorioTarefa = repositorioTarefa;
         }
         public override string ToolTipInserir => "Inserir nova Tarefa";
-
         public override string ToolTipExcluir => "Excluir Tarefa Existente";
-
         public override string ToolTipEditar => "Editar Tarefa Existente";
+        public override string ToolTipFiltrar => "Filtar Tarefas";
+        public override string ToolTipAdicionar => "Adicionar Itens na Tarefa Selecionada";
+        public override string ToolTipConcluir => "Concluir Itens na Tarefa Selecionada";
 
         public override string LabelTipoCadastro => "Cadastro de Tarefas";
+
+        public override bool filtrarHabilitado => true;
+        public override bool adicionarHabilitado => true;
+        public override bool concluirHabilitado => true;
+
+
+
+
         public override void Inserir() {
             TelaTarefaForm telaTarefa = new TelaTarefaForm();
             DialogResult opcaoEscolhida = telaTarefa.ShowDialog();
@@ -34,7 +42,7 @@ namespace Agenda.ModuloTarefa {
 
         public override void Editar() {
 
-            Tarefa tarefaSelecionada = listagemTarefa.ObterTarefaSelecionada();
+            Tarefa tarefaSelecionada = ObterTarefaSelecionada();
 
             if (tarefaSelecionada == null) {
                 MessageBox.Show("Nenhuma Tarefa Selecionada!","Editar Tarefas",MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -59,7 +67,7 @@ namespace Agenda.ModuloTarefa {
         }
 
         public override void Excluir() {
-            Tarefa tarefaSelecionada = listagemTarefa.ObterTarefaSelecionada();
+            Tarefa tarefaSelecionada = ObterTarefaSelecionada();
 
             if (tarefaSelecionada == null) {
                 MessageBox.Show("Nenhuma Tarefa Selecionada!", "Excluir Tarefas", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -78,7 +86,7 @@ namespace Agenda.ModuloTarefa {
 
         public override void Adicionar() {
 
-            Tarefa tarefaSelecionada = listagemTarefa.ObterTarefaSelecionada();
+            Tarefa tarefaSelecionada = ObterTarefaSelecionada();
 
             if (tarefaSelecionada == null) {
                 MessageBox.Show("Nenhuma Tarefa Selecionada!", "Adição de itens da Tarefas", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -104,9 +112,14 @@ namespace Agenda.ModuloTarefa {
             }
         }
 
+        private Tarefa ObterTarefaSelecionada() {
+            int id = tabelaTarefas.ObterIdSelecionado();
+            return repositorioTarefa.SelecionarPorId(id);
+        }
+
         public override void Concluir() {
 
-            Tarefa tarefaSelecionada = listagemTarefa.ObterTarefaSelecionada();
+            Tarefa tarefaSelecionada =ObterTarefaSelecionada();
 
             if (tarefaSelecionada == null) {
                 MessageBox.Show("Nenhuma Tarefa Selecionada!", "Conclusão de itens da Tarefas", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -166,23 +179,23 @@ namespace Agenda.ModuloTarefa {
         private void CarregarTarefas(List<Tarefa> tarefas) {
 
             
-            listagemTarefa.AtualizarRegistros(tarefas);
+            tabelaTarefas.AtualizarRegistros(tarefas);
         }
 
         private void CarregarTarefas() {
 
             List<Tarefa> tarefas = repositorioTarefa.SelecionarPorPrioridade();
-            listagemTarefa.AtualizarRegistros(tarefas);
+            tabelaTarefas.AtualizarRegistros(tarefas);
         }
 
         public override UserControl ObterListagem() {
-            if (listagemTarefa == null) {
-                listagemTarefa = new ListagemTarefaControl();
+            if (tabelaTarefas == null) {
+                tabelaTarefas = new TabelaTarefaControl();
             }
 
             CarregarTarefas();
 
-            return listagemTarefa;
+            return tabelaTarefas;
         }
     }
 }

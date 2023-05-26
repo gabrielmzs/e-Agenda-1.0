@@ -1,12 +1,13 @@
 ﻿using Agenda.Compartilhado;
 using Agenda.ModuloCompromisso;
+using Agenda.ModuloTarefa;
 
 namespace Agenda.ModuloContato {
     public class ControladorContato : ControladorBase {
         
         private RepositorioContato repositorioContato;
-        private RepositorioCompromisso repositorioCompromisso;
-        private ListagemContatoControl listagemContato;
+       
+        private TabelaContatoControl tabelaContato;
 
         public ControladorContato(RepositorioContato repositorioContato) {
             this.repositorioContato = repositorioContato;
@@ -34,13 +35,13 @@ namespace Agenda.ModuloContato {
 
         public override void Editar() {
             TelaContatoForm telaContato = new TelaContatoForm();
-            telaContato.Contato = listagemContato.ObterContatoSelecionado();
+            telaContato.Contato = ObterContatoSelecionado();
 
             DialogResult opcaoEscolhida = telaContato.ShowDialog();
 
             if (opcaoEscolhida == DialogResult.OK) {
                 Contato contato = telaContato.Contato;
-                repositorioContato.Editar(contato);
+                repositorioContato.Editar(contato.id, contato);
                 CarregarContatos();
             }
         }
@@ -49,23 +50,23 @@ namespace Agenda.ModuloContato {
 
         private void CarregarContatos() {
             List<Contato> contatos = repositorioContato.SelecionarTodos();
-            listagemContato.AtualizarRegistros(contatos);
+            tabelaContato.AtualizarRegistros(contatos);
         }
 
         public override UserControl ObterListagem() {
 
-            if(listagemContato == null) {
-                listagemContato = new ListagemContatoControl();
+            if(tabelaContato == null) {
+                tabelaContato = new TabelaContatoControl();
             }
 
             CarregarContatos();
 
-            return listagemContato;
+            return tabelaContato;
         }
 
         public override void Excluir() {
             
-            Contato contato = listagemContato.ObterContatoSelecionado();
+            Contato contato = ObterContatoSelecionado();
 
             DialogResult opcaoEscolhida = MessageBox.Show($"Deseja Excluir o contato {contato.nome} ?", "Exclusão de Contatos", 
                 MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
@@ -75,6 +76,11 @@ namespace Agenda.ModuloContato {
                 repositorioContato.Excluir(contato);
                 CarregarContatos();
             }
+        }
+
+        private Contato ObterContatoSelecionado() {
+            int id = tabelaContato.ObterIdSelecionado();
+            return repositorioContato.SelecionarPorId(id);
         }
     }
 

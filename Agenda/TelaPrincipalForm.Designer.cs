@@ -175,7 +175,6 @@
             this.btnFiltrar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnFiltrar.Name = "btnFiltrar";
             this.btnFiltrar.Size = new System.Drawing.Size(44, 44);
-            this.btnFiltrar.Text = "toolStripButton3";
             this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
             // 
             // toolStripSeparator3
@@ -191,7 +190,6 @@
             this.btnAdicionar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(44, 44);
-            this.btnAdicionar.Text = "toolStripButton3";
             this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
             // 
             // toolStripSeparator2
@@ -207,7 +205,6 @@
             this.btnConcluir.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnConcluir.Name = "btnConcluir";
             this.btnConcluir.Size = new System.Drawing.Size(44, 44);
-            this.btnConcluir.Text = "toolStripButton3";
             this.btnConcluir.Click += new System.EventHandler(this.btnConcluir_Click);
             // 
             // toolStripSeparator4

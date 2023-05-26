@@ -7,7 +7,7 @@ namespace Agenda {
     public partial class TelaPrincipalForm : Form {
 
         private ControladorBase controlador;
-        private RepositorioContato repositorioContato = new RepositorioContato();
+        private RepositorioContato repositorioContato = new RepositorioContato(new List<Contato>());
         private RepositorioCompromisso repositorioCompromisso = new RepositorioCompromisso(new List<Compromisso>());
         private RepositorioTarefa repositorioTarefa = new RepositorioTarefa(new List<Tarefa>());
         public TelaPrincipalForm() {
@@ -22,8 +22,7 @@ namespace Agenda {
 
             controlador = new ControladorContato(repositorioContato);
             ConfigurarTelaPrincipal(controlador);
-            
-            
+
         }
 
         private void compromissosMenuItem_Click(object sender, EventArgs e) {
@@ -86,6 +85,17 @@ namespace Agenda {
             btnInserir.ToolTipText = controlador.ToolTipInserir;
             btnEditar.ToolTipText = controlador.ToolTipEditar;
             btnExcluir.ToolTipText = controlador.ToolTipExcluir;
+            btnFiltrar.ToolTipText = controlador.ToolTipFiltrar;
+            btnAdicionar.ToolTipText = controlador.ToolTipAdicionar;
+            btnConcluir.ToolTipText = controlador.ToolTipConcluir;
+
+            btnInserir.Enabled = controlador.inserirHabilitado;
+            btnEditar.Enabled = controlador.editarHabilitado;
+            btnExcluir.Enabled = controlador.excluirHabilitado;
+            btnFiltrar.Enabled = controlador.filtrarHabilitado;
+            btnAdicionar.Enabled = controlador.adicionarHabilitado;
+            btnConcluir.Enabled = controlador.concluirHabilitado;
+
         }
 
 

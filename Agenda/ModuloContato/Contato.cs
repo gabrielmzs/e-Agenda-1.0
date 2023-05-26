@@ -23,7 +23,11 @@ namespace Agenda.ModuloContato {
         }
 
         public override void AtualizarInformacoes(Contato registroAtualizado) {
-            throw new NotImplementedException();
+            nome = registroAtualizado.nome;
+            email = registroAtualizado.email;
+            telefone = registroAtualizado.telefone;
+            cargo = registroAtualizado.cargo;
+            empresa = registroAtualizado.empresa;
         }
 
         public override string[] Validar() {

@@ -11,7 +11,7 @@ namespace Agenda.ModuloCompromisso {
     public class ControladorCompromisso : ControladorBase {
 
         private RepositorioCompromisso repositorioCompromisso;
-        private ListagemCompromissoControl listagemCompromisso;
+        private TabelaCompromissoControl tabelaCompromisso;
         private RepositorioContato repositorioContato;
 
         public ControladorCompromisso(RepositorioCompromisso repositorioCompromisso, RepositorioContato repositorioContato) {
@@ -19,13 +19,13 @@ namespace Agenda.ModuloCompromisso {
             this.repositorioContato = repositorioContato;
         }
 
-        public override string ToolTipInserir { get { return "Inserir novo Compromisso"; } }
+        public override string ToolTipInserir => "Inserir novo Compromisso";
+        public override string ToolTipExcluir => "Excluir Compromisso Existente"; 
+        public override string ToolTipEditar => "Editar Compromisso Existente";
+        public override string ToolTipFiltrar => "Filtrar Compromissos "; 
+        public override string LabelTipoCadastro => "Cadastro de Compromissos";
 
-        public override string ToolTipExcluir { get { return "Excluir Compromisso Existente"; } }
-
-        public override string ToolTipEditar { get { return "Editar Compromisso Existente"; } }
-
-        public override string LabelTipoCadastro { get { return "Cadastro de Compromissos"; } }
+        public override bool filtrarHabilitado => true;
 
 
         public override void Inserir() {
@@ -42,7 +42,7 @@ namespace Agenda.ModuloCompromisso {
         }
         public override void Editar() {
 
-            Compromisso compromissoSelecionado = listagemCompromisso.ObterCompromissoSelecionado();
+            Compromisso compromissoSelecionado = ObterCompromissoSelecionado();
 
             if (compromissoSelecionado == null) {
                 MessageBox.Show("Nenhum Compromisso Selecionado!", "Editar Compromissos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -63,7 +63,7 @@ namespace Agenda.ModuloCompromisso {
         }
 
         public override void Excluir() {
-            Compromisso compromisso = listagemCompromisso.ObterCompromissoSelecionado();
+            Compromisso compromisso = ObterCompromissoSelecionado();
 
             DialogResult opcaoEscolhida = MessageBox.Show($"Deseja Excluir o compromisso selecionado?", "Exclusão de Compromisso",
                 MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
@@ -77,18 +77,24 @@ namespace Agenda.ModuloCompromisso {
 
 
         public override UserControl ObterListagem() {
-            if (listagemCompromisso == null) {
-                listagemCompromisso = new ListagemCompromissoControl();
+            if (tabelaCompromisso == null) {
+                tabelaCompromisso = new TabelaCompromissoControl();
             }
 
             CarregarCompromissos();
 
-            return listagemCompromisso;
+            return tabelaCompromisso;
         }
 
         private void CarregarCompromissos() {
             List<Compromisso> compromissos = repositorioCompromisso.SelecionarTodos();
-            listagemCompromisso.AtualizarRegistros(compromissos);
+            tabelaCompromisso.AtualizarRegistros(compromissos);
+        }
+
+
+        private Compromisso ObterCompromissoSelecionado() {
+            int id = tabelaCompromisso.ObterIdSelecionado();
+            return repositorioCompromisso.SelecionarPorId(id);
         }
     }
 }

@@ -11,7 +11,20 @@ namespace Agenda.Compartilhado {
         public abstract string ToolTipExcluir { get; }
         public abstract string ToolTipEditar { get; }
 
+        public virtual string ToolTipFiltrar { get; }
+        public virtual string ToolTipAdicionar { get; }
+        public virtual string ToolTipConcluir { get; }
+
         public abstract string LabelTipoCadastro { get; }
+
+        public virtual bool inserirHabilitado { get{ return true; } }
+        public virtual bool editarHabilitado { get { return true; } }
+        public virtual bool excluirHabilitado { get { return true; } }
+
+
+        public virtual bool filtrarHabilitado { get { return false; } }
+        public virtual bool adicionarHabilitado { get { return false; } }
+        public virtual bool concluirHabilitado { get { return false; } }
 
         public abstract void Inserir();
         public abstract void Editar();
