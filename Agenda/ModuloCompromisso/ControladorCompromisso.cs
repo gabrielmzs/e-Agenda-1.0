@@ -1,5 +1,6 @@
 ﻿using Agenda.Compartilhado;
 using Agenda.ModuloContato;
+using Agenda.ModuloTarefa;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,15 +28,36 @@ namespace Agenda.ModuloCompromisso {
         public override string LabelTipoCadastro { get { return "Cadastro de Compromissos"; } }
 
 
-        public override void Editar() {
+        public override void Inserir() {
 
             TelaCompromisso telaCompromisso = new TelaCompromisso(repositorioContato.SelecionarTodos());
+            DialogResult opcaoEscolhida = telaCompromisso.ShowDialog();
+
+            if (opcaoEscolhida == DialogResult.OK) {
+
+                Compromisso compromisso = telaCompromisso.ObterCompromisso();
+                repositorioCompromisso.Inserir(compromisso);
+                CarregarCompromissos();
+            }
+        }
+        public override void Editar() {
+
+            Compromisso compromissoSelecionado = listagemCompromisso.ObterCompromissoSelecionado();
+
+            if (compromissoSelecionado == null) {
+                MessageBox.Show("Nenhum Compromisso Selecionado!", "Editar Compromissos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            TelaCompromisso telaCompromisso = new TelaCompromisso(repositorioContato.SelecionarTodos());
+
+            telaCompromisso.ConfigurarTela(compromissoSelecionado);
 
             DialogResult opcaoEscolhida = telaCompromisso.ShowDialog();
 
             if (opcaoEscolhida == DialogResult.OK) {
-                Compromisso compromisso = telaCompromisso.Compromisso;
-                repositorioCompromisso.Inserir(compromisso);
+                Compromisso compromisso = telaCompromisso.ObterCompromisso();
+                repositorioCompromisso.Editar(compromisso.id,compromisso);
                 CarregarCompromissos();
             }
         }
@@ -53,18 +75,6 @@ namespace Agenda.ModuloCompromisso {
             }
         }
 
-        public override void Inserir() {
-
-            TelaCompromisso telaCompromisso = new TelaCompromisso(repositorioContato.SelecionarTodos());
-            DialogResult opcaoEscolhida = telaCompromisso.ShowDialog();
-
-            if (opcaoEscolhida == DialogResult.OK) {
-
-                Compromisso compromisso = telaCompromisso.Compromisso;
-                repositorioCompromisso.Inserir(compromisso);
-                CarregarCompromissos();
-            }
-        }
 
         public override UserControl ObterListagem() {
             if (listagemCompromisso == null) {

@@ -5,8 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Agenda.Compartilhado {
-    public abstract class EntidadeBase {
+    public abstract class EntidadeBase<TEntidade> {
 
         public int id;
+        public abstract void AtualizarInformacoes(TEntidade registroAtualizado);
+
+        public abstract string[] Validar();
     }
 }

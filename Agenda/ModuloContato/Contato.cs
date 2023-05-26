@@ -1,9 +1,9 @@
 ﻿using Agenda.Compartilhado;
 
 namespace Agenda.ModuloContato {
-    public class Contato:EntidadeBase {
+    public class Contato:EntidadeBase<Contato> {
         
-        public string nome;
+        public string nome { get; set; }
         public string empresa;
         public string cargo;
         public string telefone;
@@ -20,6 +20,14 @@ namespace Agenda.ModuloContato {
 
         public override string ToString() {
             return "Id: " + id + ", " + nome + ". Empresa: " + empresa;
+        }
+
+        public override void AtualizarInformacoes(Contato registroAtualizado) {
+            throw new NotImplementedException();
+        }
+
+        public override string[] Validar() {
+            throw new NotImplementedException();
         }
     }
 
