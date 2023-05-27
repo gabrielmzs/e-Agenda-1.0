@@ -10,12 +10,6 @@ namespace Agenda.ModuloContato {
 
         public RepositorioContato(List<Contato> contatos) {
             listaRegistros = contatos;
-        }
-
-      
-        
-
-
-        
+        }      
     }
 }

@@ -1,5 +1,5 @@
-﻿namespace Agenda.ModuloContato {
-    partial class ListagemContatoControl {
+﻿namespace Agenda.ModuloCategorias {
+    partial class TabelaCategoriaControl {
         /// <summary> 
         /// Required designer variable.
         /// </summary>
@@ -23,32 +23,34 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.listContato = new System.Windows.Forms.ListBox();
+            this.grid = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             this.SuspendLayout();
             // 
-            // listContato
+            // grid
             // 
-            this.listContato.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listContato.FormattingEnabled = true;
-            this.listContato.ItemHeight = 15;
-            this.listContato.Location = new System.Drawing.Point(0, 0);
-            this.listContato.Name = "listContato";
-            this.listContato.Size = new System.Drawing.Size(547, 437);
-            this.listContato.TabIndex = 0;
+            this.grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grid.Location = new System.Drawing.Point(0, 0);
+            this.grid.Name = "grid";
+            this.grid.RowTemplate.Height = 25;
+            this.grid.Size = new System.Drawing.Size(648, 543);
+            this.grid.TabIndex = 0;
             // 
-            // ListagemContatoControl
+            // TabelaCategoriaControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.listContato);
-            this.Name = "ListagemContatoControl";
-            this.Size = new System.Drawing.Size(547, 437);
+            this.Controls.Add(this.grid);
+            this.Name = "TabelaCategoriaControl";
+            this.Size = new System.Drawing.Size(648, 543);
+            ((System.ComponentModel.ISupportInitialize)(this.grid)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private ListBox listContato;
+        private DataGridView grid;
     }
 }

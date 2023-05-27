@@ -1,5 +1,5 @@
-﻿namespace Agenda.ModuloCompromisso {
-    partial class ListagemCompromissoControl {
+﻿namespace Agenda.ModuloDespesas {
+    partial class TabelaDespesaControl {
         /// <summary> 
         /// Required designer variable.
         /// </summary>
@@ -23,32 +23,34 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.listCompromisso = new System.Windows.Forms.ListBox();
+            this.grid = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             this.SuspendLayout();
             // 
-            // listCompromisso
+            // grid
             // 
-            this.listCompromisso.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listCompromisso.FormattingEnabled = true;
-            this.listCompromisso.ItemHeight = 15;
-            this.listCompromisso.Location = new System.Drawing.Point(0, 0);
-            this.listCompromisso.Name = "listCompromisso";
-            this.listCompromisso.Size = new System.Drawing.Size(598, 511);
-            this.listCompromisso.TabIndex = 0;
+            this.grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grid.Location = new System.Drawing.Point(0, 0);
+            this.grid.Name = "grid";
+            this.grid.RowTemplate.Height = 25;
+            this.grid.Size = new System.Drawing.Size(548, 494);
+            this.grid.TabIndex = 0;
             // 
-            // ListagemCompromissoControl
+            // TelaDespesaControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.listCompromisso);
-            this.Name = "ListagemCompromissoControl";
-            this.Size = new System.Drawing.Size(598, 511);
+            this.Controls.Add(this.grid);
+            this.Name = "TelaDespesaControl";
+            this.Size = new System.Drawing.Size(548, 494);
+            ((System.ComponentModel.ISupportInitialize)(this.grid)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private ListBox listCompromisso;
+        private DataGridView grid;
     }
 }

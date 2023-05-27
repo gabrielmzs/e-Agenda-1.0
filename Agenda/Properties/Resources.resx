@@ -136,4 +136,7 @@
   <data name="library_add_FILL0_wght500_GRAD0_opsz40" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\library_add_FILL0_wght500_GRAD0_opsz40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="pageview_FILL0_wght500_GRAD0_opsz48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pageview_FILL0_wght500_GRAD0_opsz48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

@@ -14,6 +14,7 @@ namespace Agenda.Compartilhado {
         public virtual string ToolTipFiltrar { get; }
         public virtual string ToolTipAdicionar { get; }
         public virtual string ToolTipConcluir { get; }
+        public virtual string ToolTipDespesasCategoria { get; }
 
         public abstract string LabelTipoCadastro { get; }
 
@@ -25,6 +26,7 @@ namespace Agenda.Compartilhado {
         public virtual bool filtrarHabilitado { get { return false; } }
         public virtual bool adicionarHabilitado { get { return false; } }
         public virtual bool concluirHabilitado { get { return false; } }
+        public virtual bool DespesasCategoriaHabilitado { get { return false; } }
 
         public abstract void Inserir();
         public abstract void Editar();
@@ -35,6 +37,10 @@ namespace Agenda.Compartilhado {
         public virtual void Adicionar() { }
 
         public virtual void Concluir() { }
+
+        public virtual void DespesasPorCategoria() {
+
+        }
 
         public abstract UserControl ObterListagem();
         

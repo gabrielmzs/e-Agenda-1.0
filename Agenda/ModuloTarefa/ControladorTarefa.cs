@@ -21,8 +21,8 @@ namespace Agenda.ModuloTarefa {
 
         public override bool filtrarHabilitado => true;
         public override bool adicionarHabilitado => true;
-        public override bool concluirHabilitado => true;
 
+        public override bool concluirHabilitado => true;
 
 
 
