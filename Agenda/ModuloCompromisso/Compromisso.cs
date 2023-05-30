@@ -3,6 +3,8 @@ using Agenda.ModuloContato;
 
 
 namespace Agenda.ModuloCompromisso {
+
+    [Serializable]
     public class Compromisso:EntidadeBase<Compromisso> {
 
         public string assunto;

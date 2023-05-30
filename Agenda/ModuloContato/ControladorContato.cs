@@ -5,11 +5,11 @@ using Agenda.ModuloTarefa;
 namespace Agenda.ModuloContato {
     public class ControladorContato : ControladorBase {
         
-        private RepositorioContato repositorioContato;
+        private IRepositorioContato repositorioContato;
        
         private TabelaContatoControl tabelaContato;
 
-        public ControladorContato(RepositorioContato repositorioContato) {
+        public ControladorContato(IRepositorioContato repositorioContato) {
             this.repositorioContato = repositorioContato;
         }
 

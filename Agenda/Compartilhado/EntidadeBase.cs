@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Agenda.Compartilhado {
+
+    [Serializable]
     public abstract class EntidadeBase<TEntidade> {
 
         public int id;

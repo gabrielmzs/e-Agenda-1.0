@@ -3,10 +3,10 @@
 namespace Agenda.ModuloTarefa {
     internal class ControladorTarefa : ControladorBase {
 
-        private RepositorioTarefa repositorioTarefa;
+        private IRepositorioTarefa repositorioTarefa;
         private TabelaTarefaControl tabelaTarefas;
 
-        public ControladorTarefa(RepositorioTarefa repositorioTarefa) {
+        public ControladorTarefa(IRepositorioTarefa repositorioTarefa) {
 
             this.repositorioTarefa = repositorioTarefa;
         }
@@ -39,6 +39,7 @@ namespace Agenda.ModuloTarefa {
                 CarregarTarefas();
             }
         }
+
 
         public override void Editar() {
 

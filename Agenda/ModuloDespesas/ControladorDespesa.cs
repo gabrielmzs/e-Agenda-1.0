@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 namespace Agenda.ModuloDespesas {
     internal class ControladorDespesa : ControladorBase {
 
-        private RepositorioDespesa repositorioDespesa;
-        private RepositorioCategoria repositorioCategoria;
+        private IRepositorioDespesa repositorioDespesa;
+        private IRepositorioCategoria repositorioCategoria;
         private TabelaDespesaControl tabelaDespesa;
 
-        public ControladorDespesa(RepositorioDespesa repositorioDespesa, RepositorioCategoria repositorioCategoria) {
+        public ControladorDespesa(IRepositorioDespesa repositorioDespesa, IRepositorioCategoria repositorioCategoria) {
             this.repositorioDespesa = repositorioDespesa;
             this.repositorioCategoria = repositorioCategoria;
         }

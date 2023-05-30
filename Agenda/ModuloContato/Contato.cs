@@ -1,6 +1,8 @@
 ﻿using Agenda.Compartilhado;
 
 namespace Agenda.ModuloContato {
+
+    [Serializable]
     public class Contato:EntidadeBase<Contato> {
         
         public string nome { get; set; }

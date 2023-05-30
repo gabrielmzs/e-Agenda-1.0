@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 
 namespace Agenda.ModuloCategorias {
+
+    [Serializable]
     public class Categoria : EntidadeBase<Categoria> {
 
         public string titulo;

@@ -1,20 +1,14 @@
-﻿using Agenda.Compartilhado;
+﻿
 using Agenda.ModuloContato;
-using Agenda.ModuloTarefa;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Agenda.ModuloCompromisso {
     public class ControladorCompromisso : ControladorBase {
 
-        private RepositorioCompromisso repositorioCompromisso;
+        private IRepositorioCompromisso repositorioCompromisso;
         private TabelaCompromissoControl tabelaCompromisso;
-        private RepositorioContato repositorioContato;
+        private IRepositorioContato repositorioContato;
 
-        public ControladorCompromisso(RepositorioCompromisso repositorioCompromisso, RepositorioContato repositorioContato) {
+        public ControladorCompromisso(IRepositorioCompromisso repositorioCompromisso, IRepositorioContato repositorioContato) {
             this.repositorioCompromisso = repositorioCompromisso;
             this.repositorioContato = repositorioContato;
         }

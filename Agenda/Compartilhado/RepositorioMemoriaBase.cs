@@ -2,9 +2,8 @@
 
 namespace Agenda.Compartilhado {
 
-    public abstract class RepositorioBase<TEntidade>
+    public abstract class RepositorioMemoriaBase<TEntidade> where TEntidade : EntidadeBase<TEntidade> {
 
-        where TEntidade : EntidadeBase<TEntidade> {
         protected List<TEntidade> listaRegistros;
         protected int contadorRegistros = 0;
 

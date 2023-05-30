@@ -6,9 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Agenda.ModuloDespesas {
-    internal class RepositorioDespesa:RepositorioBase<Despesa> {
+    internal class RepositorioMemoriaDespesa:RepositorioMemoriaBase<Despesa> {
 
-        public RepositorioDespesa(List<Despesa> despesas) {
+        public RepositorioMemoriaDespesa(List<Despesa> despesas) {
             listaRegistros = despesas;
         }
     }

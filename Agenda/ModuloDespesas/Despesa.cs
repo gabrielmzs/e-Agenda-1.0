@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Agenda.ModuloDespesas {
+
+    [Serializable]
     public class Despesa : EntidadeBase<Despesa> {
 
         public string descricao;

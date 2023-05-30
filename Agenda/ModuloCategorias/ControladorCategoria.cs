@@ -10,11 +10,11 @@ using System.Threading.Tasks;
 namespace Agenda.ModuloCategorias {
     internal class ControladorCategoria : ControladorBase {
 
-        private RepositorioCategoria repositorioCategoria;
-        private RepositorioDespesa repositorioDespesa;
+        private IRepositorioCategoria repositorioCategoria;
+        private IRepositorioDespesa repositorioDespesa;
         private TabelaCategoriaControl tabelaCategoria;
 
-        public ControladorCategoria(RepositorioCategoria repositorioCategoria, RepositorioDespesa repositorioDespesa) {
+        public ControladorCategoria(IRepositorioCategoria repositorioCategoria, IRepositorioDespesa repositorioDespesa) {
             this.repositorioCategoria = repositorioCategoria;
             this.repositorioDespesa = repositorioDespesa;
         }
@@ -46,7 +46,6 @@ namespace Agenda.ModuloCategorias {
             }
         }
 
-
         public override void Editar() {
             Categoria categoriaSelecionada = ObterCategoriaSelecionada();
 
@@ -69,7 +68,6 @@ namespace Agenda.ModuloCategorias {
                 CarregarCategorias();
             }
         }
-
 
         public override void Excluir() {
             Categoria categoriaSelecionada = ObterCategoriaSelecionada();
@@ -102,7 +100,6 @@ namespace Agenda.ModuloCategorias {
 
             DialogResult opcaoEscolhida = tela.ShowDialog();
         }
-
 
         public override UserControl ObterListagem() {
             if (tabelaCategoria == null) {

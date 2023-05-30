@@ -6,9 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Agenda.ModuloCategorias {
-    public  class RepositorioCategoria:RepositorioBase<Categoria> {
+    public  class RepositorioMemoriaCategoria:RepositorioMemoriaBase<Categoria>, IRepositorioCategoria {
 
-        public RepositorioCategoria(List<Categoria> categorias) {
+        public RepositorioMemoriaCategoria(List<Categoria> categorias) {
             listaRegistros = categorias;
         }
 

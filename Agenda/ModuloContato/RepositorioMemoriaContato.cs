@@ -6,9 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Agenda.ModuloContato {
-    public class RepositorioContato:RepositorioBase<Contato> {
+    public class RepositorioMemoriaContato:RepositorioMemoriaBase<Contato> {
 
-        public RepositorioContato(List<Contato> contatos) {
+        public RepositorioMemoriaContato(List<Contato> contatos) {
             listaRegistros = contatos;
         }      
     }

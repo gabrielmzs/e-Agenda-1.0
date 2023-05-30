@@ -1,12 +1,8 @@
-﻿using Agenda.Compartilhado;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 
 namespace Agenda.ModuloTarefa {
 
+    [Serializable]
     public class ItemTarefa {
         public string titulo;
         public bool concluido;
@@ -33,6 +29,8 @@ namespace Agenda.ModuloTarefa {
             concluido = false;
         }
     }
+
+    [Serializable]
     public class Tarefa : EntidadeBase<Tarefa> {
 
 
