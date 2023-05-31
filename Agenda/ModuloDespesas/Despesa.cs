@@ -11,6 +11,8 @@ namespace Agenda.ModuloDespesas {
         public DateTime data;
         public PagamentoEnum pagamento;
         public List<Categoria> listaCategorias;
+
+        public Despesa() { }
         
 
         public Despesa(int id, string descricao, decimal valor, DateTime data, PagamentoEnum pagamento, List<Categoria> listaCategorias) {

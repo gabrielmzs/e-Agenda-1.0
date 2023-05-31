@@ -40,6 +40,7 @@ namespace Agenda.ModuloTarefa {
         public List<ItemTarefa> itens;
         public decimal percentual;
 
+        public Tarefa() { }
         public Tarefa(int id, string titulo, PrioridadeTarefaEnum prioridade, DateTime dataCriacao) {
             this.id = id;
             this.titulo = titulo;

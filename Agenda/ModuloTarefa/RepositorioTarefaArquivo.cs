@@ -7,35 +7,35 @@ namespace Agenda.ModuloTarefa {
 
 
         private const string NOME_ARQUIVO_TAREFAS = "tarefas.bin";
-
+        Tarefa tarefa = new Tarefa();
       
 
         public RepositorioTarefaArquivo() {
             if (File.Exists(NOME_ARQUIVO_TAREFAS))
-                CarregarRegistrosDoArquivo(NOME_ARQUIVO_TAREFAS);
+                CarregarRegistrosDoArquivo(tarefa);
         }
 
-        public void Editar(int id, Tarefa tarefa) {
-            Tarefa tarefaSelecionada = SelecionarPorId(id);
+        //public void Editar(int id, Tarefa tarefa) {
+        //    Tarefa tarefaSelecionada = SelecionarPorId(id);
 
-            tarefaSelecionada.AtualizarInformacoes(tarefa);
+        //    tarefaSelecionada.AtualizarInformacoes(tarefa);
 
-            GravarTarefasEmArquivo(NOME_ARQUIVO_TAREFAS);
-        }
+        //    GravarTarefasEmArquivo(NOME_ARQUIVO_TAREFAS);
+        //}
 
-        public void Excluir(Tarefa tarefaSelecionada) {
-            listaRegistros.Remove(tarefaSelecionada);
+        //public void Excluir(Tarefa tarefaSelecionada) {
+        //    listaRegistros.Remove(tarefaSelecionada);
 
-            GravarTarefasEmArquivo(NOME_ARQUIVO_TAREFAS);
-        }
+        //    GravarTarefasEmArquivo(NOME_ARQUIVO_TAREFAS);
+        //}
 
-        public void Inserir(Tarefa novaTarefa) {
-            contadorRegistros++;
-            novaTarefa.id = contadorRegistros;
-            listaRegistros.Add(novaTarefa);
+        //public void Inserir(Tarefa novaTarefa) {
+        //    contadorRegistros++;
+        //    novaTarefa.id = contadorRegistros;
+        //    listaRegistros.Add(novaTarefa);
 
-            GravarTarefasEmArquivo(NOME_ARQUIVO_TAREFAS);
-        }
+        //    GravarTarefasEmArquivo(NOME_ARQUIVO_TAREFAS);
+        //}
 
         public List<Tarefa> SelecionarConcluidas() {
             return listaRegistros
@@ -49,11 +49,11 @@ namespace Agenda.ModuloTarefa {
                     .ToList();
         }
 
-        public Tarefa SelecionarPorId(int id) {
-            Tarefa tarefa = listaRegistros.FirstOrDefault(x => x.id == id);
+        //public Tarefa SelecionarPorId(int id) {
+        //    Tarefa tarefa = listaRegistros.FirstOrDefault(x => x.id == id);
 
-            return tarefa;
-        }
+        //    return tarefa;
+        //}
 
         public List<Tarefa> SelecionarPorPrioridade() {
             return listaRegistros
@@ -61,9 +61,9 @@ namespace Agenda.ModuloTarefa {
                    .ToList();
         }
 
-        public List<Tarefa> SelecionarTodos() {
-            return listaRegistros;
-        }
+        //public List<Tarefa> SelecionarTodos() {
+        //    return listaRegistros;
+        //}
 
         //private void CarregarTarefasDoArquivo() {
         //    BinaryFormatter serializador = new BinaryFormatter();

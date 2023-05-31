@@ -7,6 +7,10 @@ namespace Agenda.ModuloCategorias {
 
         public string titulo;
 
+        public Categoria() {
+            
+        }
+
         public Categoria(string titulo) {
             this.titulo = titulo;
         }

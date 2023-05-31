@@ -15,6 +15,8 @@ namespace Agenda.ModuloCompromisso {
         public string local;
         public TipoLocalEnum tipo;
 
+        public Compromisso() { }
+
         public Compromisso(string assunto, DateTime dia, TimeSpan inicio, TimeSpan fim, Contato contato, string local, TipoLocalEnum tipo) {
             this.assunto = assunto;
             this.dia = dia;

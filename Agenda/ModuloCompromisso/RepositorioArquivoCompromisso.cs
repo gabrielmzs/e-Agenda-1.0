@@ -10,45 +10,46 @@ namespace Agenda.ModuloCompromisso {
 
 
         private const string NOME_ARQUIVO_CONTATOS = "compromisso.bin";
+        Compromisso compromisso= new Compromisso();
 
 
 
         public RepositorioArquivoCompromisso() {
             if (File.Exists(NOME_ARQUIVO_CONTATOS))
-                CarregarRegistrosDoArquivo(NOME_ARQUIVO_CONTATOS);
+                CarregarRegistrosDoArquivo(compromisso);
         }
 
-        public void Editar(int id, Compromisso compromisso) {
-            Compromisso compromissoSelecionado = SelecionarPorId(id);
+        //public void Editar(int id, Compromisso compromisso) {
+        //    Compromisso compromissoSelecionado = SelecionarPorId(id);
 
-            compromissoSelecionado.AtualizarInformacoes(compromisso);
+        //    compromissoSelecionado.AtualizarInformacoes(compromisso);
 
-            GravarTarefasEmArquivo(NOME_ARQUIVO_CONTATOS);
-        }
+        //    GravarTarefasEmArquivo(NOME_ARQUIVO_CONTATOS);
+        //}
 
-        public void Excluir(Compromisso compromissoSelecionado) {
-            listaRegistros.Remove(compromissoSelecionado);
+        //public void Excluir(Compromisso compromissoSelecionado) {
+        //    listaRegistros.Remove(compromissoSelecionado);
 
-            GravarTarefasEmArquivo(NOME_ARQUIVO_CONTATOS);
-        }
+        //    GravarTarefasEmArquivo(NOME_ARQUIVO_CONTATOS);
+        //}
 
-        public void Inserir(Compromisso novoCompromisso) {
-            contadorRegistros++;
-            novoCompromisso.id = contadorRegistros;
-            listaRegistros.Add(novoCompromisso);
+        //public void Inserir(Compromisso novoCompromisso) {
+        //    contadorRegistros++;
+        //    novoCompromisso.id = contadorRegistros;
+        //    listaRegistros.Add(novoCompromisso);
 
-            GravarTarefasEmArquivo(NOME_ARQUIVO_CONTATOS);
-        }
+        //    GravarTarefasEmArquivo(NOME_ARQUIVO_CONTATOS);
+        //}
 
-        public Compromisso SelecionarPorId(int id) {
+        //public Compromisso SelecionarPorId(int id) {
 
-            Compromisso compromisso = listaRegistros.FirstOrDefault(x => x.id == id);
+        //    Compromisso compromisso = listaRegistros.FirstOrDefault(x => x.id == id);
 
-            return compromisso;
-        }
+        //    return compromisso;
+        //}
 
-        public List<Compromisso> SelecionarTodos() {
-            return listaRegistros;
-        }
+        //public List<Compromisso> SelecionarTodos() {
+        //    return listaRegistros;
+        //}
     }
 }

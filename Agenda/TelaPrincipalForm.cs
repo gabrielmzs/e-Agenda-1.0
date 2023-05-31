@@ -9,6 +9,7 @@ namespace Agenda {
     public partial class TelaPrincipalForm : Form {
 
         private ControladorBase controlador;
+
         private IRepositorioContato repositorioContato = new RepositorioArquivoContato();
         private IRepositorioCompromisso repositorioCompromisso = new RepositorioArquivoCompromisso();
         
@@ -16,13 +17,13 @@ namespace Agenda {
         private IRepositorioDespesa repositorioDespesa = new RepositorioArquivoDespesa();
 
         private IRepositorioTarefa repositorioTarefa = new RepositorioTarefaArquivo();
+    
+        
         public TelaPrincipalForm() {
             InitializeComponent();
 
             //PopularRepositorios();
         }
-
-       
 
         private void contatosMenuItem_Click(object sender, EventArgs e) {
 
@@ -51,7 +52,6 @@ namespace Agenda {
         private void despesasMenuItem_Click(object sender, EventArgs e) {
             controlador = new ControladorDespesa(repositorioDespesa,repositorioCategoria);
             ConfigurarTelaPrincipal(controlador);
-
         }
 
         private void btnInserir_Click(object sender, EventArgs e) {

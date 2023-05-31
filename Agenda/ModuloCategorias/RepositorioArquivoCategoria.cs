@@ -9,43 +9,44 @@ namespace Agenda.ModuloCategorias {
     public class RepositorioArquivoCategoria : RepositorioArquivoBase<Categoria>, IRepositorioCategoria {
 
         private const string NOME_ARQUIVO_CATEGORIA = "categorias.bin";
+        Categoria categoria = new Categoria();
 
 
         public RepositorioArquivoCategoria() {
             if (File.Exists(NOME_ARQUIVO_CATEGORIA))
-                CarregarRegistrosDoArquivo(NOME_ARQUIVO_CATEGORIA);
+                CarregarRegistrosDoArquivo(categoria);
         }
 
-        public void Editar(int id, Categoria categoria) {
-            Categoria categoriaSelecionado = SelecionarPorId(id);
+        //public void Editar(int id, Categoria categoria) {
+        //    Categoria categoriaSelecionado = SelecionarPorId(id);
 
-            categoriaSelecionado.AtualizarInformacoes(categoria);
+        //    categoriaSelecionado.AtualizarInformacoes(categoria);
 
-            GravarTarefasEmArquivo(NOME_ARQUIVO_CATEGORIA);
-        }
+        //    GravarTarefasEmArquivo(NOME_ARQUIVO_CATEGORIA);
+        //}
 
-        public void Excluir(Categoria categoriaSelecionado) {
-            listaRegistros.Remove(categoriaSelecionado);
+        //public void Excluir(Categoria categoriaSelecionado) {
+        //    listaRegistros.Remove(categoriaSelecionado);
 
-            GravarTarefasEmArquivo(NOME_ARQUIVO_CATEGORIA);
-        }
+        //    GravarTarefasEmArquivo(NOME_ARQUIVO_CATEGORIA);
+        //}
 
-        public void Inserir(Categoria novoCategoria) {
-            contadorRegistros++;
-            novoCategoria.id = contadorRegistros;
-            listaRegistros.Add(novoCategoria);
+        //public void Inserir(Categoria novoCategoria) {
+        //    contadorRegistros++;
+        //    novoCategoria.id = contadorRegistros;
+        //    listaRegistros.Add(novoCategoria);
 
-            GravarTarefasEmArquivo(NOME_ARQUIVO_CATEGORIA);
-        }
+        //    GravarTarefasEmArquivo(NOME_ARQUIVO_CATEGORIA);
+        //}
 
-        public Categoria SelecionarPorId(int id) {
-            Categoria categoria = listaRegistros.FirstOrDefault(x => x.id == id);
+        //public Categoria SelecionarPorId(int id) {
+        //    Categoria categoria = listaRegistros.FirstOrDefault(x => x.id == id);
 
-            return categoria;
-        }
+        //    return categoria;
+        //}
 
-        public List<Categoria> SelecionarTodos() {
-            return listaRegistros;
-        }
+        //public List<Categoria> SelecionarTodos() {
+        //    return listaRegistros;
+        //}
     }
 }

@@ -7,6 +7,8 @@ namespace Agenda.Compartilhado {
         protected List<TEntidade> listaRegistros;
         protected int contadorRegistros = 0;
 
+
+
         public virtual void Inserir(TEntidade registro) {
             contadorRegistros++;
 

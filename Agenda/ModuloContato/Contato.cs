@@ -11,6 +11,11 @@ namespace Agenda.ModuloContato {
         public string telefone;
         public string email;
 
+        public Contato() {
+
+            
+        }
+
         public Contato( string nome, string empresa, string telefone, string email, string cargo) {
             
             this.nome = nome;
