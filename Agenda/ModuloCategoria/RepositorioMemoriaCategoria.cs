@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Agenda.ModuloCategorias {
+namespace Agenda.ModuloCategoria {
     public  class RepositorioMemoriaCategoria:RepositorioMemoriaBase<Categoria>, IRepositorioCategoria {
 
         public RepositorioMemoriaCategoria(List<Categoria> categorias) {

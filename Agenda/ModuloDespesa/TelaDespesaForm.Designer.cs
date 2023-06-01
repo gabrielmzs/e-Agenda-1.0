@@ -1,4 +1,4 @@
-﻿namespace Agenda.ModuloDespesas {
+﻿namespace Agenda.ModuloDespesa {
     partial class TelaDespesaForm {
         /// <summary>
         /// Required designer variable.

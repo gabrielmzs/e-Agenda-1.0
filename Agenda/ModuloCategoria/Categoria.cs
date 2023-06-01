@@ -1,6 +1,5 @@
 ﻿
-
-namespace Agenda.ModuloCategorias {
+namespace Agenda.ModuloCategoria {
 
     [Serializable]
     public class Categoria : EntidadeBase<Categoria> {

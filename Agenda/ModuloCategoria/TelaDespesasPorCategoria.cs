@@ -1,6 +1,6 @@
-﻿using Agenda.ModuloDespesas;
+﻿using Agenda.ModuloDespesa;
 
-namespace Agenda.ModuloCategorias {
+namespace Agenda.ModuloCategoria {
     public partial class TelaDespesasPorCategoria : Form {
         public TelaDespesasPorCategoria() {
             InitializeComponent();

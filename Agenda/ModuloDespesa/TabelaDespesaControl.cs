@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Agenda.ModuloDespesas {
+namespace Agenda.ModuloDespesa {
     public partial class TabelaDespesaControl : UserControl {
         public TabelaDespesaControl() {
             InitializeComponent();

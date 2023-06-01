@@ -1,7 +1,7 @@
-﻿using Agenda.ModuloCategorias;
+﻿using Agenda.ModuloCategoria;
 
 
-namespace Agenda.ModuloDespesas {
+namespace Agenda.ModuloDespesa {
 
     [Serializable]
     public class Despesa : EntidadeBase<Despesa> {

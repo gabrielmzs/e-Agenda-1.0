@@ -1,5 +1,5 @@
 ﻿using Agenda.ModuloContato;
-using Agenda.ModuloDespesas;
+using Agenda.ModuloDespesa;
 using Agenda.ModuloTarefa;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Agenda.ModuloCategorias {
+namespace Agenda.ModuloCategoria {
     internal class ControladorCategoria : ControladorBase {
 
         private IRepositorioCategoria repositorioCategoria;

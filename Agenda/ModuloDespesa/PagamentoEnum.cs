@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Agenda.ModuloDespesas {
+namespace Agenda.ModuloDespesa {
     public enum PagamentoEnum {
         
         Cartão,

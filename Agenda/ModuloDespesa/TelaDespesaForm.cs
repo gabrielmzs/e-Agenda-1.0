@@ -1,4 +1,4 @@
-﻿using Agenda.ModuloCategorias;
+﻿using Agenda.ModuloCategoria;
 using Agenda.ModuloContato;
 using Agenda.ModuloTarefa;
 using System;
@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Agenda.ModuloDespesas {
+namespace Agenda.ModuloDespesa {
     public partial class TelaDespesaForm : Form {
 
         List<Categoria> categorias;

@@ -1,12 +1,7 @@
-﻿using Agenda.ModuloCategorias;
-using Agenda.ModuloTarefa;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Agenda.ModuloCategoria;
 
-namespace Agenda.ModuloDespesas {
+
+namespace Agenda.ModuloDespesa {
     internal class ControladorDespesa : ControladorBase {
 
         private IRepositorioDespesa repositorioDespesa;

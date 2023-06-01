@@ -1,0 +1,47 @@
+{
+  "$id": "1",
+  "contatos": {
+    "$id": "2",
+    "$values": [
+      {
+        "$id": "3",
+        "nome": "Robson",
+        "empresa": "Google Maps",
+        "cargo": "Tirador de Foto",
+        "telefone": "(11) 9 8423-4253",
+        "email": "robinho@gmail.com",
+        "id": 1
+      }
+    ]
+  },
+  "compromissos": {
+    "$id": "4",
+    "$values": [
+      {
+        "$id": "5",
+        "assunto": "Fotos",
+        "dia": "2023-06-09T00:00:00",
+        "inicio": "10:00:00",
+        "fim": "12:00:00",
+        "contato": {
+          "$ref": "3"
+        },
+        "local": "Parque",
+        "tipo": 1,
+        "id": 1
+      }
+    ]
+  },
+  "tarefas": {
+    "$id": "6",
+    "$values": []
+  },
+  "categorias": {
+    "$id": "7",
+    "$values": []
+  },
+  "despesas": {
+    "$id": "8",
+    "$values": []
+  }
+}

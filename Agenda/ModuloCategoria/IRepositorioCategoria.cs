@@ -1,6 +1,6 @@
 ﻿
 
-namespace Agenda.ModuloCategorias {
+namespace Agenda.ModuloCategoria {
     public interface IRepositorioCategoria {
 
         void Inserir(Categoria novoCategoria);

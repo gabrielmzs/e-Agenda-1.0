@@ -1,4 +1,4 @@
-﻿namespace Agenda.ModuloCategorias {
+﻿namespace Agenda.ModuloCategoria {
     partial class TelaDespesasPorCategoria {
         /// <summary>
         /// Required designer variable.

@@ -2,7 +2,7 @@
 
 using Agenda.ModuloContato;
 
-namespace Agenda.ModuloDespesas {
+namespace Agenda.ModuloDespesa {
     public interface IRepositorioDespesa {
         void Inserir(Despesa novaDespesa);
         void Editar(int id, Despesa despesa);
